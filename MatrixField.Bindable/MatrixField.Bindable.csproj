@@ -3,9 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>MatrixField</Authors>
+    <Authors>Mingxi Du</Authors>
     <Company />
     <Description>Provides a set of Tuple-like classes with INotifyPropertyChanged implemented.</Description>
+    <Version>0.0.2</Version>
+    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <Copyright>Mingxi Du</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/MatricField/BindableTuples</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

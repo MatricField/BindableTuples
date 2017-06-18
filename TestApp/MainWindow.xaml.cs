@@ -21,12 +21,16 @@ namespace TestApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public IDictionary<TestEnum, Bindable<bool, bool, bool, bool, bool, bool, bool>> Data { get; set; }
+        public IDictionary<TestEnum, Bindable<bool>> Data { get; set; }
+
+        private TestEnum DefaultOption = TestEnum.Two;
+
         public MainWindow()
         {
             Data =
                 ((TestEnum[])Enum.GetValues(typeof(TestEnum)))
-                .ToDictionary(x => x, _ => new Bindable<bool, bool, bool, bool, bool, bool, bool>(false, false, false, false, false, false, false));
+                .ToDictionary(x => x, _ => Bindable.Create(false));
+            Data[DefaultOption].Item1 = true;
             InitializeComponent();
         }
     }
