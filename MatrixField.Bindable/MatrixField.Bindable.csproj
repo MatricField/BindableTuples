@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>MatrixField</Authors>
+    <Company />
+    <Description>Provides a set of Tuple-like classes with INotifyPropertyChanged implemented.</Description>
+  </PropertyGroup>
+
+</Project>
