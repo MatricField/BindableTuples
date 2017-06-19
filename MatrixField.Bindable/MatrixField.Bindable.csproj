@@ -6,8 +6,8 @@
     <Authors>Mingxi Du</Authors>
     <Company />
     <Description>Provides a set of Tuple-like classes with INotifyPropertyChanged implemented.</Description>
-    <Version>0.0.2</Version>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
     <Copyright>Mingxi Du</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>

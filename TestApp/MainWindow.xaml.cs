@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MatrixField.Bindable;
+using MatrixField.Bindable.Collections;
+using System.Collections.Specialized;
 
 namespace TestApp
 {
@@ -21,17 +23,26 @@ namespace TestApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public IDictionary<TestEnum, Bindable<bool>> Data { get; set; }
+        private IDictionary<TestEnum, Bindable<bool>> _InternalData;
+        private IDictionary<TestEnum, Bindable<bool>> InternalData
+        {
+            get => _InternalData;
+            set
+            {
+                _InternalData = value;
+                Data = _InternalData.AsBindable();
+            }
+        }
+        public BindableCollection<KeyValuePair<TestEnum, Bindable<bool>>> Data { get; private set; }
 
         private TestEnum DefaultOption = TestEnum.Two;
 
         public MainWindow()
         {
-            Data =
-                ((TestEnum[])Enum.GetValues(typeof(TestEnum)))
-                .ToDictionary(x => x, _ => Bindable.Create(false));
-            Data[DefaultOption].Item1 = true;
+            InternalData = ((TestEnum[])Enum.GetValues(typeof(TestEnum))).ToDictionary(x => x, _ => Bindable.Create(false));
+            InternalData[DefaultOption].Item1 = true;
             InitializeComponent();
+            Data.Add(new KeyValuePair<TestEnum, Bindable<bool>>((TestEnum)6, Bindable.Create(false)));
         }
     }
 }
